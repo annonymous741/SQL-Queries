@@ -30,4 +30,33 @@ where
    city NOT like 'I%' or
     city NOT like 'O%' or
      city NOT like 'U%'
-===================================================================
+ ===================================================================
+SEELECT name
+from Employee
+where 
+salary > 2000 and months <10
+
+SELECT DISTINCT CITY 
+FROM STATION  
+WHERE CITY NOT LIKE '[AEIOU]%' OR CITY NOT LIKE '%[aeiou]'
+ ===================================================================
+
+select  distinct(city) 
+from  station 
+where city not in (
+select distinct(city) 
+from station 
+where  city like '%a' or
+ city like '%e' or
+  city like '%i' or
+ city like '%o' or 
+ city like '%u'
+    
+);
+======================================================================
+select CITY,LENGTH(CITY) from STATION order by Length(CITY) asc, CITY limit 1; 
+select CITY,LENGTH(CITY) from STATION order by Length(CITY) desc, CITY limit 1;
+=======================================================================
+SELECT  COUNT(CITY) - COUNT(DISTINCT(CITY))
+FROM STATION 
+=======================================================================
